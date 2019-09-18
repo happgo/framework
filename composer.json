@@ -15,12 +15,6 @@
         "php": ">7.1",
         "happgo/lib": "dev-master"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/xiao/Desktop/code/happgo/lib"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Happgo\\Framework\\": "src/"
