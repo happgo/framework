@@ -1,0 +1,32 @@
+{
+    "name": "happgo/framework",
+    "type": "library",
+    "description": "this is framework",
+    "minimum-stability": "dev",
+    "license": "Apache-2.0",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "zhangbofa",
+            "email": "626223818@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">7.1",
+        "happgo/lib": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/xiao/Desktop/code/happgo/lib"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Happgo\\Framework\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}
