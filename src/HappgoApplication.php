@@ -8,6 +8,7 @@
 
 namespace Happgo\Framework;
 
+use Happgo\Db\DbPool;
 use Happgo\Framework\Contract\AppInterface;
 
 use Happgo\Lib\ComposerHelper;
@@ -51,14 +52,16 @@ class HappgoApplication implements AppInterface
         $http = new Server("0.0.0.0", 6699);
 
         $http->set([
-            'worker_num'    => 2,
+            'worker_num'    => 3,
             'max_request'   => 1000,
         ]);
 
-        // 开始事件监听
-        $http->on('start', function (Server $server) {
 
-            var_dump('start -------  hello world');
+        // 开始事件监听
+        $http->on('WorkerStart', function (Server $server) {
+            var_dump('WorkerStart');
+            DbPool::getInstance()->init();
+
         });
 
         $http->on('request', function (Request $request, Response $response) {
